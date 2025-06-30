@@ -1,0 +1,59 @@
+// VARIABLES
+@import "../abstracts/variables";
+
+// MIXIN
+@import "../abstracts/mixin";
+
+/* --- CONTACTO PAGE --- */
+.contact-main {
+    height: 100vh;
+    @include flex-dos;
+}
+.contact-title {
+    text-align: center;
+    color: nth($colores, 1 );
+    text-shadow: 0px 0px 4px nth($colores, 3 );
+    font-size: 2.3rem;
+}
+.contact-form {
+    @include grid(grid, 400px);
+    padding: 30px;
+    gap: 15px;
+    input{
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+    }
+    textarea{
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+    }
+}
+
+/* --- Contact Queries --- */
+@media (min-width:750px) {
+    .contact-form {
+        grid-template-columns: repeat(2, 300px);
+        grid-template-areas: 
+        "name name"
+        "email telefono"
+        "texto texto"
+        "button button";
+        input:first-child{
+            grid-area: name;
+        }
+        input:nth-child(2){
+            grid-area: email;
+        }
+        input:nth-child(3){
+            grid-area: telefono;
+        }
+        textarea:nth-child(4){
+            grid-area: texto;
+        }
+        input:nth-child(5){
+            grid-area: button;
+        }
+    }
+}

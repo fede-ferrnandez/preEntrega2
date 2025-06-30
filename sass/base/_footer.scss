@@ -1,0 +1,10 @@
+// VARIABLES
+@import "../abstracts/variables";
+
+/* --- Footer --- */
+footer {
+    padding: 60px;
+    text-align: center;
+    background-color: nth($colores , 2 );
+    color: nth($colores , 1 );
+}

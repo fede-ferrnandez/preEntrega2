@@ -1,0 +1,138 @@
+// VARIABLES
+@import "../abstracts/variables";
+
+// MIXIN
+@import "../abstracts/mixin";
+
+/* carousel */
+.carousel-main{
+    @include flex;
+}
+.carousel{
+    @include flex-dos;
+    width: 100%;
+}
+.carousel-item{
+    height: auto;
+}
+.carousel-control-prev-icon {
+    border-radius: 100%;
+    background-color: nth($colores, 3);
+    align-items: center;
+}
+.carousel-control-next-icon {
+    border-radius: 100%;
+    background-color: nth($colores, 3 );
+}
+
+/* maps section */
+.maps-section{
+    background-color: nth($colores, 2 );
+    color: nth($colores, 1 );
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+    h2{
+        margin-bottom: 20px;
+    }    
+}
+.maps-container{
+    @include grid(grid, 1fr);
+    max-width: 1300px;
+    margin: auto;
+    width: 100%;
+    gap: 20px;
+    min-height: 80vh;
+}
+.maps {
+    background-image: linear-gradient(#0009, #0009), url("../imagenes/mapa.png");
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    place-content: center;
+    border-radius: 12px;
+}
+.maps:hover {
+    opacity: 0.8;
+    outline: 2px solid #fff6;
+}
+
+/* --- Maps Queries --- */
+@media (min-width:800px) {
+    .maps-section {
+        min-height: auto;
+    }
+    .maps-container {
+        grid-template-columns: repeat(2, 1fr);
+        min-height: 30vh;
+    }
+}
+
+/* form section */
+.form-section{
+    @include flex;
+    justify-content: center;
+    min-height: 40vh;
+    padding: 15px;
+    h2{
+        color: nth($colores, 1 );
+        text-shadow: 2px 2px 4px #999a;
+    }
+}
+.form-input-container{
+    @include flex;
+    gap: 8px;
+    max-width: 90vh;
+    width: 60vw;
+    input{
+        @include inputs;
+    }
+}
+
+// button
+@import "../base/button";
+
+/* --- Form Queries --- */
+@media (min-width:750px) {
+    .form-input-container {
+        @include grid(grid, repeat(2, 1fr));
+        grid-template-areas: 
+        "name name"
+        "email whatsapp"
+        "marca modelo"
+        "año kilometraje"
+        "button button";
+    }
+    .form-input-container {
+        gap: 10px;
+        input{
+            padding: 15px;
+        }
+        input:first-child{
+            grid-area: name;
+        }
+        input:nth-child(2){
+            grid-area: email;
+        }
+        input:nth-child(3){
+            grid-area: whatsapp;
+        }
+        input:nth-child(4){
+            grid-area: marca;
+        }
+        input:nth-child(5){
+            grid-area: modelo;
+        }
+        input:nth-child(6){
+            grid-area: año;
+        }
+        input:nth-child(7){
+            grid-area: kilometraje;
+        }
+        input:nth-child(8){
+            grid-area: button;
+        }
+    }
+}

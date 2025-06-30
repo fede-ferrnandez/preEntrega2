@@ -1,0 +1,12 @@
+// VARIABLES
+@import "../abstracts/variables";
+
+// estilos de boton
+.button {
+    background-color: nth($colores, 2 );
+    color: nth($colores, 1 );
+}
+
+.button:hover {
+    opacity: 0.88;
+}

@@ -1,0 +1,36 @@
+// VARIABLES
+@import "../abstracts/variables";
+
+// MIXIN
+@import "../abstracts/mixin";
+
+/* --- STOCK PAGE --- */
+.cars-container {
+    @include flex;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #000;
+}
+.cars {
+    background-color: nth($colores, 2 );
+    color: nth($colores, 1 );
+    text-align: center;
+    padding: 100px;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+.cars:hover {
+    opacity: 0.88;
+}
+
+/* --- Stock queries --- */
+@media (min-width:750px) {
+    .cars-container {
+        @include grid(grid, repeat(2, 1fr));
+    }
+}
+@media (min-width:1024px) {
+    .cars-container {
+        @include grid(grid, repeat(3, 1fr));
+    }
+}
