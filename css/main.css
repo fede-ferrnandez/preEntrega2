@@ -210,41 +210,65 @@ body {
   }
 }
 /* --- STOCK PAGE --- */
-.cars-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-  border: 1px solid #000;
-}
-
-.cars {
+.stock-section {
+  padding: 40px 20px;
   background-color: #212d4a;
-  color: #fff;
   text-align: center;
-  padding: 100px;
-  border-radius: 5px;
-  border: 1px solid #000;
+}
+.stock-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #fff;
 }
 
-.cars:hover {
+.stock-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.car-card {
+  background-color: #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  padding-bottom: 20px;
+  transition: transform 0.2s ease;
+}
+.car-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.car-card h3 {
+  margin: 15px 0 5px;
+  font-size: 1.2rem;
+  color: #212d4a;
+}
+.car-card .price {
+  color: #007bff;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.car-card button {
+  padding: 10px 20px;
+  background-color: #212d4a;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.car-card button:hover {
   opacity: 0.88;
 }
 
-/* --- Stock queries --- */
-@media (min-width: 750px) {
-  .cars-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
+.car-card:hover {
+  transform: scale(1.02);
 }
-@media (min-width: 1024px) {
-  .cars-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+
 /* --- CONTACTO PAGE --- */
 .contact-main {
   height: 100vh;
